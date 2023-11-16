@@ -1,9 +1,15 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SignUp from './pages/SignUp'
 
 function App() {
 
   return (
     <>
-      <h1 className='bg-slate-700 text-lg'>hello world</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='signup' element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
