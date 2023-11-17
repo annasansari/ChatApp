@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
-import Chat from './pages/Chat'
+import Home from './pages/Home'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn />} />
-          <Route path='/chat' element={<Chat />} />
+          <Route path='/home' element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>

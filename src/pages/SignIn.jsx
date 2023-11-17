@@ -17,7 +17,7 @@ function SignIn() {
             type="text"
             placeholder='Password'
             className='p-2 rounded-md outline-none text-slate-900 ' />
-          <Link to={'/chat'}>
+          <Link to={'/home'}>
             <button className='bg-sky-600 rounded-lg text-white font-medium p-1 w-[100%]'>Sign up</button>
           </Link>
           <Link to={'/signup'}>
