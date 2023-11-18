@@ -2,7 +2,9 @@ import React from 'react'
 
 function Input() {
   return (
-    <div>Input</div>
+    <div  className='mb-0 z-20'>
+      <input className='w-[100%] p-2 outline-none' type="text" placeholder='Write something...' />
+    </div>
   )
 }
 

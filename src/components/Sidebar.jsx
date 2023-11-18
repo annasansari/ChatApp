@@ -6,7 +6,7 @@ import Message from '../components/Message'
 
 function Sidebar() {
   return (
-    <div className='border-color flex-[1] bg-slate-500 overflow-hidden overflow-scroll'>
+    <div className='border-color flex-[1] bg-slate-500 overflow-y-scroll'>
       <Navbar />
       <SearchBar />
       <div className='mt-2'>
