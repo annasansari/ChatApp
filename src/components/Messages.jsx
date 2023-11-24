@@ -4,8 +4,12 @@ import './style.css'
 
 function Messages() {
     return (
-        <div className=''>
-            <div>
+        <div>
+            <div className='overflow-y-scroll h-[86vh] bg-slate-30000'>
+                <UserMessage />
+                <UserMessage />
+                <UserMessage />
+                <UserMessage />
                 <UserMessage />
                 <UserMessage />
                 <UserMessage />

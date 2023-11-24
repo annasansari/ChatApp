@@ -6,7 +6,7 @@ import Input from './Input'
 
 function Chats() {
   return (
-    <div className='flex-[2] overflow-y-scroll'>
+    <div className='flex-[2] h-[100vh]'>
       <TopBar />
       <Messages />
       <Input />
