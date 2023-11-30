@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getFirestore, collection, setDoc, doc,getDoc  } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword ,onAuthStateChanged} from "firebase/auth";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
@@ -25,4 +25,4 @@ const storage = getStorage(app);
 
 
 
-export { getAuth, updateProfile, doc, auth, createUserWithEmailAndPassword, collection, setDoc, db, storage, ref, uploadBytesResumable, getDownloadURL }
+export { onAuthStateChanged,signInWithEmailAndPassword, getAuth, updateProfile, doc, auth, createUserWithEmailAndPassword, collection, setDoc, db, storage, ref, uploadBytesResumable, getDownloadURL,getDoc  }

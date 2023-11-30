@@ -1,22 +1,35 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import SignUp from './pages/SignUp'
 import SignIn from './pages/SignIn'
 import Home from './pages/Home'
-import { useContext } from 'react'
-import { AuthContext } from './context/AuthContext'
+import { onAuthStateChanged, getAuth, auth, doc, getDoc, db } from './firebase/firebase.js'
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from './context/AuthContext.jsx'
 
 function App() {
 
-  // const { currentUser } = useContext(AuthContext)
-  // console.log(currentUser);
+  const { currentUser } = useContext(AuthContext)
+  console.log(currentUser);
 
+  const ProtectedRoutes = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to={'/signin'} />
+    }
+    return children
+  }
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/signin' element={<SignIn />} />
+          <Route path='/'>
+            <Route index element={
+              <ProtectedRoutes>
+                <Home />
+              </ProtectedRoutes>}
+            />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/signin' element={<SignIn />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
