@@ -19,7 +19,7 @@ function SignUp() {
     const file = (e.target[3].files[0]);
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password)
-      const storageRef = ref(storage, 'images/rivers.jpg');
+      const storageRef = ref(storage, `images/${file.name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
         (error) => {
