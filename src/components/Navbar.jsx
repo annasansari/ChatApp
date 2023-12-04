@@ -6,9 +6,6 @@ import { AuthContext } from '../context/AuthContext'
 
 function Navbar() {
   const { currentUser } = useContext(AuthContext)
-  console.log(currentUser);
-
-
   return (
     <div>
       <div className='flex justify-around items-center h-16 bg-slate-900'>

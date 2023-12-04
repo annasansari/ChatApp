@@ -12,7 +12,6 @@ function SearchBar() {
 
 
   useEffect(() => {
-    console.log('Updated user:', user);
   }, [user]);
 
   const handleSearch = async () => {
@@ -55,7 +54,6 @@ function SearchBar() {
           },
           [combinedID + ".date"]: serverTimestamp(),
         });
-
         await updateDoc(doc(db, "usersChat", user.userID), {
           [combinedID + ".userInfo"]: {
             uid: currentUser.uid,
@@ -64,7 +62,8 @@ function SearchBar() {
           },
           [combinedID + ".date"]: serverTimestamp(),
         });
-      } else {
+      }
+      else {
         console.log("Document already exists.");
       }
     } catch (err) {
@@ -77,18 +76,17 @@ function SearchBar() {
 
   return (
     <>
-      <div>
+      <div className='border-btm'>
         <input value={username} onKeyDown={handleKey} onChange={(e) => setUsername(e.target.value)} type="text" placeholder='Search User' className='bg-transparent p-3 text-slate-300 h-10 outline-none placeholder:text-slate-400 w-[100%] ' />
       </div>
       {
-        user && <div onClick={handleSelect} className='h-16 bg-slate-200 cursor-pointer border-btm'>
+        user && <div onClick={handleSelect} className='h-16 bg-slate-700 cursor-pointer border-btm'>
           <div className='flex items-center gap-2'>
             <div>
               <img src={user.photoURL || profile} alt="" className='w-12 h-12 rounded-full object-cover mt-2' />
             </div>
             <div>
-              <h1 className='font-bold'>{user.displayName}</h1>
-              <p className='text-sm'>Ok Thank you</p>
+              <h1 className='font-bold text-white'>{user.displayName}</h1>
             </div>
           </div>
         </div>
